@@ -1130,3 +1130,319 @@ body.admin-page .page-hero {
   border-bottom: 1px solid #ddd;
 }
 
+/* ============================================================
+   RESPONSIVE — escritorio y móvil (sin romper el diseño base)
+   ============================================================ */
+
+/* Base fluida: los contenedores pasan de ancho fijo a máximo */
+.site-header .container,
+.hero-content,
+.adopcion-container,
+.como-container,
+.page-hero-container,
+.animal-container,
+.contacto-container,
+.admin-wrap,
+.ficha-wrap {
+  width: 100%;
+  max-width: 1490px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.hero {
+  height: auto;
+  min-height: 400px;
+  padding: 40px 0;
+}
+
+.hero-text h1 {
+  font-size: clamp(32px, 4.5vw, 62px);
+}
+
+.hero-image {
+  max-width: 100%;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Tablet / portátil pequeño (<=1100px) ---------- */
+@media (max-width: 1100px) {
+  .site-header .container {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-image::before {
+    width: 520px;
+    height: 520px;
+    right: -160px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    transform: translate(20px, -30px);
+  }
+
+  .adopcion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .como-pasos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .como-pasos .paso:last-child {
+    grid-column: 1 / -1;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .animal-container,
+  .contacto-container,
+  .ficha-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-wrap {
+    padding: 24px 20px;
+  }
+}
+
+/* ---------- Móvil (<=768px) ---------- */
+@media (max-width: 768px) {
+  /* Cabecera apilada: logo+login arriba, menú debajo */
+  .site-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+  }
+
+  .main-nav a {
+    font-size: 15px;
+    padding: 8px 2px;
+    display: inline-block;
+  }
+
+  .login-link {
+    font-size: 14px;
+    padding: 7px 12px;
+  }
+
+  /* Hero en una columna */
+  .hero {
+    min-height: 0;
+    padding: 32px 0 24px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text::before {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130%;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(28px, 7vw, 38px);
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .hero-image::before {
+    width: 380px;
+    height: 380px;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  .hero-image img {
+    width: 100%;
+    transform: none;
+  }
+
+  /* Secciones */
+  .adopcion {
+    padding: 40px 0 56px;
+  }
+
+  .adopcion-header h2,
+  .como-header h2 {
+    font-size: 26px;
+  }
+
+  .adopcion-header p,
+  .como-header p {
+    font-size: 16px;
+  }
+
+  .adopcion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .como-adoptar {
+    padding: 48px 0 64px;
+  }
+
+  .como-pasos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .como-pasos .paso:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .paso {
+    padding: 28px 20px 32px;
+  }
+
+  /* Formularios y detalle */
+  .form-row.two {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero h1 {
+    font-size: 26px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+  }
+
+  .portrait-image {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  table.info th {
+    width: 130px;
+  }
+
+  /* Admin */
+  .admin-wrap,
+  .ficha-wrap {
+    padding: 20px 12px;
+  }
+
+  .card__body {
+    padding: 14px 14px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .table {
+    font-size: 14px;
+    min-width: 640px;
+  }
+
+  /* Login */
+  .login-page {
+    height: auto;
+    padding: 40px 16px;
+  }
+
+  .login-box {
+    padding: 28px 22px;
+  }
+}
+
+/* ---------- Móvil pequeño (<=480px) ---------- */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  .pet-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .site-footer {
+    font-size: 13px;
+    padding: 20px 12px;
+  }
+
+  .btn-submit,
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .toolbar .left,
+  .toolbar .right {
+    width: 100%;
+  }
+
+  .toolbar .right .btn,
+  .toolbar .left .btn {
+    width: 100%;
+  }
+}
+
