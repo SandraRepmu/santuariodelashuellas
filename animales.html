@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todos los animales | El Santuario de las Huellas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div style="background:#fff3cd;color:#664d03;text-align:center;padding:8px 12px;font-size:14px;border-bottom:1px solid #ffecb5;">Modo demo — sin servidor: datos de ejemplo en <code>data/animales.json</code>. Los cambios se guardan solo en tu navegador. Usuario demo: <b>admin / admin</b></div>
+	<script type="module" src="./animales.js"></script>
+
+  <!-- Header (reutilizado) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="imagenes/logo.png" alt="El Santuario de las Huellas" />
+      </a>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a class="is-active" href="animales.html">Nuestros peludos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+			<li id="optionAdmin"><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      
+	   <a href="login.html" class="login-link" id="botonLogin">Login</a>
+	   <a href="#" class="login-link" id="botonLogout">Cerrar sesión</a>
+    </div>
+  </header>
+
+  <!-- Cabecera de página -->
+  <section class="page-hero">
+    <div class="page-hero-container">
+      <h1>Todos nuestros peludos</h1>
+      <p>Perros y gatos que buscan una segunda oportunidad. Conócelos y descubre a tu nuevo mejor amigo.</p>
+    </div>
+  </section>
+
+  <!-- Listado -->
+  <section class="adopcion">
+    <div class="adopcion-container">
+      <div class="adopcion-grid" id="contenedor-tarjetas">
+
+        
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2025 El Santuario de las Huellas — Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

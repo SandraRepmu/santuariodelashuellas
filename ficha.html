@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ficha del animal | El Santuario de las Huellas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div style="background:#fff3cd;color:#664d03;text-align:center;padding:8px 12px;font-size:14px;border-bottom:1px solid #ffecb5;">Modo demo — sin servidor: datos de ejemplo en <code>data/animales.json</code>. Los cambios se guardan solo en tu navegador. Usuario demo: <b>admin / admin</b></div>
+	<script type="module" src="./ficha.js"></script>
+	
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="imagenes/logo.png" alt="El Santuario de las Huellas" />
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="animales.html">Nuestros peludos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+			    <li id="optionAdmin"><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+      
+	   <a href="login.html" class="login-link" id="botonLogin">Login</a>
+	   <a href="#" class="login-link" id="botonLogout">Cerrar sesión</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-container">
+      <a class="back" href="animales.html">← Volver al listado</a>
+      <h1 id="titulo-animal"></h1>
+    </div>
+  </section>
+
+  <main class="ficha-wrap">
+    <!-- Columna izquierda: imagen + sobre como un único stack (misma celda) -->
+    <div class="left-stack">
+      <section class="card">
+        <div class="card__body portrait-wrap">
+          <img id="imagen-animal" class="portrait-image">
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__head"><h2 id="sobre-animal" ></h2></div>
+        <div class="card__body">
+          <p id="descripcion-animnal"></p>
+          <p id="historia-animnal"></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Columna derecha -->
+    <aside class="side">
+      <section class="card">
+        <div class="card__head"><h2>Información</h2></div>
+        <div class="card__body">
+          <table class="info">
+            <tr><th>Nombre</th><td id="nombre-animnal"></td></tr>
+            <tr><th>Especie</th><td id="especie-animnal"></td></tr>
+            <tr><th>Edad</th><td id="edad-animnal"></td></tr>
+            <tr><th>Sexo</th><td id="sexo-animnal"></td></tr>
+            <tr><th>Tamaño</th><td id="tamano-animnal"></td></tr>
+            <tr><th>Raza</th><td id="raza-animnal"></td></tr>
+            <tr><th>Vacunas</th><td id="vacunas-animnal"></td></tr>
+            <tr><th>Esterilizado</th><td id="esterilizado-animnal"></td></tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="card cta">
+        <div class="card__head"><h2>¿Quieres adoptarme?</h2></div>
+        <div class="card__body">
+          <p>Rellena el formulario de contacto y cuéntanos sobre ti. El equipo revisará tu solicitud y te contactará.</p>
+          <p><a class="btn" id="boton-contacto" href="contacto.html">Contactar</a></p>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 · El Santuario de las Huellas</p>
+    </div>
+  </footer>
+</body>
+</html>

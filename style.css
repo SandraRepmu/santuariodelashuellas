@@ -1,0 +1,1132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #2b2b2b;
+  background-color: #fff;
+}
+
+/* Cabecera */
+.site-header {
+  /* Mantener fijo en la parte de arriba */
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
+
+.site-header .container {
+  width: 1490px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+
+/* Logo superior */
+.logo img {
+  display: block;
+  height: 50px;
+  width: auto;
+}
+
+/* Mantener el menú centrado */
+.main-nav { justify-self: center; }
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 600;
+  padding: 6px 2px;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover { 
+  color: #000; 
+}
+
+/* Login */
+.login-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2b2b2b;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.login-link:hover { 
+  background: #f7f7f7; 
+}
+
+/* Botón cerrar sesión */
+.logout-link {
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Sección hero (pestañas) */
+.hero {
+  background: #fff;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Contenedor interno de sección hero */
+.hero-content {
+  width: 1490px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  align-items: center;
+  gap: 48px;
+}
+.hero-text {
+  max-width: 740px;
+  position: relative;
+}
+
+/*  Redondel anaranjado suave detrás del texto (ejemplo modificable https://stackoverflow.com/questions/36475335/hero-with-gradient-using-before-not-working-correctly) */
+.hero-text::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  width: 120%;
+  height: 160%;
+  background: radial-gradient(circle at 40% 40%, rgba(247, 190, 90, 0.28), rgba(246, 217, 130, 0.12) 40%, transparent 75%);
+  filter: blur(35px);
+  z-index: 0;
+}
+
+/* Texto sobre el redondel */
+.hero-text h1,
+.hero-text p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 62px;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: #1e1e1e;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.hero-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+  color: #4a4a4a;
+  font-weight: 400;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+/* Imagen (derecha) con semicírculo amarillo detrás */
+.hero-image {
+  position: relative;
+  width: 600px;
+  height: 380px;
+  justify-self: end;
+  isolation: isolate;
+}
+
+/* Circulo anaranjado detrás de la imágen */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  right: -190px;
+  top: 50%;
+  width: 760px;
+  height: 760px;
+  background: #f6d982;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen PNG transparente */
+.hero-image img {
+  position: relative;
+  width: 108%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  z-index: 1;
+  transform: translate(40px, -60px);
+}
+
+
+/* Pantalla de adopción */
+.adopcion {
+  padding: 64px 0 80px;
+  background: #fff;
+}
+
+.adopcion-container {
+  width: 1490px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.adopcion-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 36px;
+  position: relative;
+}
+
+.adopcion-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin: 0 0 10px;
+  letter-spacing: .3px;
+}
+
+.adopcion-header p {
+  font-size: 18px;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Rejilla de tarjetas con 3 columnas*/
+.adopcion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Tarjeta */
+.pet-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0,0, .06);
+  transition: border-color .15s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  border-color: #e9e9e9;
+}
+
+/* Imagen con proporción uniforme */
+.pet-media {
+  width: 100%;
+}
+
+.pet-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.pet-body {
+  padding: 14px 16px 18px;
+}
+
+.pet-name {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e1e1e;
+  letter-spacing: .2px;
+}
+
+.pet-meta {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #777;
+}
+
+.pet-desc {
+  margin: 0;
+  font-size: 15px;
+  color: #3f3f3f;
+  line-height: 1.5;
+}
+
+/* Botón "Conóceme" dentro de las tarjetas centrado */
+.pet-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaciado entre texto y el corazón */
+  margin-top: 18px;
+  padding: 10px 26px;
+  background: #f7be5a;
+  color: #1e1e1e;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Corazón que se agranda al pasar por encima al lado del texto */
+.pet-btn::after {
+  content: "❤";
+  font-size: 14px;
+  color: #e85d5d;
+  transition: transform 0.3s ease;
+}
+
+/* Hover: más luminoso y con pequeño movimiento */
+.pet-btn:hover {
+  background: #f9c96c; /* tono más claro al pasar el ratón */
+  transform: translate(-50%, -2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.pet-btn:hover::after {
+  transform: scale(1.3);
+}
+
+
+/* Zona del cómo adoptar*/
+.como-adoptar {
+  background: #fff8e6;
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculo de fondo igual que hero */
+.como-adoptar::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 180%;
+  height: 260%;
+  background: radial-gradient(circle at 50% 30%, rgba(247, 190, 90, 0.25), rgba(246, 217, 130, 0.1) 50%, transparent 80%);
+  filter: blur(60px);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.hero-text::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  width: 120%;
+  height: 160%;
+  background: radial-gradient(circle at 40% 40%, rgba(247, 190, 90, 0.28), rgba(246, 217, 130, 0.12) 40%, transparent 75%);
+  filter: blur(35px);
+  z-index: 0;
+}
+
+.como-container {
+  width: 1490px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Encabezado */
+.como-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.como-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin: 0 0 14px;
+}
+
+.como-header p {
+  font-size: 18px;
+  color: #4a4a4a;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Pasos */
+.como-pasos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  text-align: center;
+}
+
+.paso {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 28px 46px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.paso-icono {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.paso h3 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.paso p {
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Pie de página */
+.site-footer {
+  background: #fff;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 15px;
+  color: #555;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+
+.site-footer p {
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.page-hero-container {
+  width: 1490px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
+}
+.page-hero h1 {
+  margin: 0 0 8px;
+  font-size: 42px;
+  color: #1e1e1e;
+  letter-spacing: .3px;
+}
+.page-hero p {
+  margin: 0;
+  font-size: 18px;
+  color: #4a4a4a;
+}
+
+/* Estado activo en el menú de pestañas */
+.main-nav a.is-active {
+  color: #000;
+  border-bottom: 2px solid #f7be5a;
+  padding-bottom: 4px;
+}
+
+/* Página de ficha */
+.breadcrumb {
+  background: #fff;
+  padding: 14px 0 0;
+}
+
+.breadcrumb .page-hero-container {
+  text-align: left;
+  font-size: 14px;
+  color: #777;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover { 
+  color: #000; 
+}
+
+.breadcrumb span { 
+  margin: 0 8px; 
+}
+
+.animal-wrap { 
+  background: #fff; 
+  padding: 30px 0 80px; 
+}
+
+.animal-container {
+  width: 1490px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 36px;
+}
+
+/* Columna izquierda */
+.animal-cover {
+  margin: 0 0 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.animal-cover img {
+  width: 90%;
+  max-height: 550px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.animal-story h2 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  color: #1e1e1e;
+}
+
+.animal-story p {
+  font-size: 17px;
+  color: #4a4a4a;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Columna derecha */
+.animal-aside { 
+  align-self: start; 
+}
+
+.animal-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+.animal-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+/* Tabla simple */
+.data-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+}
+
+.data-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.data-list li span { 
+  color: #777; 
+}
+.data-list li strong { 
+  color: #1e1e1e; 
+}
+
+/* Botón único */
+.cta-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #f7be5a;
+  color: #1e1e1e;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.1);
+  transition: all 0.25s ease;
+  font-size: 16px;
+}
+.btn-primary:hover {
+  background: #f9c96c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.12), 0 0 20px rgba(247,190,90,.35);
+}
+
+.aside-note {
+  font-size: 13px;
+  color: #787878;
+  margin: 12px 2px 0;
+  text-align: center;
+}
+
+/* Página de contacto */
+.contacto { 
+  background: #fff; 
+  padding: 40px 0 80px; 
+}
+
+.contacto-container {
+  width: 1490px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 36px;
+  align-items: start;
+}
+
+/* Formulario */
+.form 
+{ 
+  background:#fff; 
+  border:1px solid #eee; 
+  border-radius:16px; 
+  padding:24px; 
+  box-shadow:0 8px 24px rgba(0,0,0,.06); 
+}
+.honeypot { 
+  position:absolute; 
+  left:-9999px; 
+}
+.form-row { 
+  display: grid; 
+  gap: 16px; 
+  margin-bottom: 14px; 
+}
+
+.form-row.two { 
+  grid-template-columns: 1fr 1fr; 
+}
+
+.field label { 
+  display:block; 
+  font-size:14px; 
+  color:#555; 
+  margin-bottom:6px; 
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  font: inherit;
+  color: #2b2b2b;
+  background: #fff;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #f7be5a;
+  box-shadow: 0 0 0 3px rgba(247,190,90,.25);
+}
+
+.check { 
+  font-size:14px; 
+  color:#4a4a4a; 
+  display:flex; 
+  gap:8px; 
+  align-items:flex-start; 
+}
+.check input { 
+  margin-top:3px; 
+}
+
+.btn-submit {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 12px 28px;
+  background: #f7be5a;
+  color: #1e1e1e;
+  font-weight: 600;
+  text-decoration: none;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+  transition: all .25s ease;
+}
+.btn-submit:hover {
+  background: #f9c96c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.12), 0 0 20px rgba(247,190,90,.35);
+}
+
+.nota-requeridos { 
+  font-size:12px; 
+  color:#888; 
+  margin-top:8px; 
+}
+
+.info-card {
+  background:#fff; 
+  border:1px solid #eee; 
+  border-radius:16px; 
+  padding:22px 20px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+.info-card h3 { 
+  margin:0 0 12px; 
+  font-size:20px; 
+}
+.info-list { 
+  list-style:none; 
+  margin:0 0 14px; 
+  padding:0; 
+  display:grid;
+  gap:8px; 
+}
+.info-list li { 
+  font-size:15px; 
+  color:#444; 
+}
+
+.mapa-placeholder {
+  border:1px dashed #e6e6e6; 
+  border-radius:10px; 
+  height:150px; 
+  display:flex;
+  align-items:center; 
+  justify-content:center; 
+  color:#999; 
+  font-size:14px; 
+  margin:8px 0 12px;
+}
+.aviso { 
+  font-size:13px; 
+  color:#777; 
+}
+
+/* Base de la tarjeta */
+.card { 
+  background:#fff; 
+  border:1px solid #eee; 
+  border-radius:16px; 
+  box-shadow:0 8px 24px rgba(0,0,0,.06); 
+  overflow:hidden; 
+}
+
+.card__head { 
+  padding:18px 16px; 
+  border-bottom:1px solid #f0f0f0; 
+}
+.card__body { 
+  padding:18px 22px; 
+}
+
+/* Botones */
+.btn { 
+  display:inline-block; 
+  background:#f7be5a; 
+  border:0; 
+  border-radius:10px; 
+  padding:10px 14px; 
+  font-weight:700; 
+  text-decoration:none; 
+  color:#000; 
+  cursor:pointer; 
+}
+
+.btn:hover, 
+.btn:focus { 
+  filter:brightness(.98); 
+}
+
+.btn--ghost { 
+  background:#fff; 
+  border:1px solid #ddd; 
+}
+
+/* Pills */
+.pill { 
+  display:inline-block; 
+  padding:4px 10px; 
+  border-radius:999px; 
+  font-size:12px; 
+  font-weight:700; 
+  border:1px solid #eee; 
+}
+
+.pill--yes { 
+  background:#eaf8ed; 
+  color:#1d7a2e; 
+  border-color:#d9f0de; 
+}
+.pill--no  { 
+  background:#fbeeee; 
+  color:#9b2c2c; 
+  border-color:#f5d3d3; 
+}
+
+/* Tablas */
+.table 
+{ width:100%; 
+  border-collapse:collapse; 
+  font-size:15px; 
+}
+
+.table thead th { 
+  background:#fffdf7; 
+  color:#555; 
+  text-align:left; 
+  padding:14px 16px; 
+  border-bottom:1px solid #f0f0f0; 
+}
+
+.table tbody td { 
+  padding:0 16px 18px; 
+  border-bottom:1px solid #f2f2f2; 
+}
+
+.table-wrap { 
+  overflow:auto; 
+}
+
+/* Toolbars */
+.toolbar { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  gap:12px; 
+  padding:14px 22px; 
+  border-bottom:1px solid #f5f5f5;
+}
+
+.toolbar .left, 
+.toolbar .right { 
+  display:flex; 
+  gap:10px; 
+  align-items:center; 
+}
+
+/* Layouts admin y ficha */
+.admin-wrap { 
+  width:1490px; 
+  margin:0 auto; 
+  padding:24px 60px; 
+}
+.ficha-wrap { 
+  width:1490px; 
+  margin:0 auto; 
+  padding:24px 20px; 
+  display:grid; 
+  grid-template-columns:2fr 1fr; 
+  gap:24px; 
+}
+
+.left-stack { 
+  display:flex; 
+  flex-direction:column; 
+  gap:12px; 
+  align-self:start; 
+}
+.side { 
+  display:grid; 
+  gap:16px; 
+  height:max-content; 
+}
+
+/* Imagen del retrato */
+.portrait-wrap { 
+  display:flex; 
+  justify-content:center; 
+}
+.portrait-image { 
+  width:400px; 
+  max-width:100%; 
+  height:auto; 
+  border-radius:16px; 
+  object-fit:cover; 
+  box-shadow:0 6px 18px rgba(0,0,0,.08); 
+}
+
+/* Detalle de mensaje (meta grid) */
+.detail-meta { 
+  display:grid; 
+  grid-template-columns:1fr 1fr; 
+  gap:16px; 
+}
+
+.detail-field { 
+  background:#fff; 
+  border:1px solid #f3f3f3; 
+  border-radius:12px; 
+  padding:12px 14px; 
+}
+.detail-field .label { 
+  font-size:12px; 
+  color:#777; 
+  margin:0 0 4px; 
+}
+.detail-field .value { 
+  font-size:16px; 
+  margin:0; 
+  color:#222; 
+}
+.detail-desc { 
+  grid-column:1 / -1; 
+}
+.detail-desc pre { 
+  margin:0; 
+  white-space:pre-wrap; 
+  font-family:inherit; 
+}
+
+/* Pantalla del login de administrador */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 200px);
+}
+
+.login-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  padding: 40px 50px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 24px;
+}
+
+.login-box .field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.login-box label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-box button {
+  margin-top: 10px;
+}
+
+/* Página de los datos del animal */
+.page-hero {
+  background:#fdf5e3;
+  border-bottom:1px solid #eee
+}
+
+.page-hero-container {
+  width:1490px;
+  margin:0 auto;
+  padding:24px 20px
+}
+.page-hero h1 {
+  margin:0;
+  font-size:32px
+}
+
+.ficha-wrap {
+  width:1490px;
+  margin:0 auto;
+  padding:24px 20px;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:24px
+}
+.left-stack {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-self:start
+}
+
+.card {
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  overflow:hidden
+}
+
+.card__head {
+  padding:18px 22px;
+  border-bottom:1px solid #f0f0f0
+}
+
+.card__body {
+  padding:18px 22px
+}
+
+.meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px
+}
+
+.badge {
+  display:inline-block;
+  background:#fffdf7;
+  border:1px solid #f0e6cc;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  color:#7a5e1a
+}
+
+/* Imagen del retrato de animal */
+.portrait-wrap {
+  display:flex;
+  justify-content:center
+}
+
+.portrait-image {
+  width:400px;
+  max-width:100%;
+  height:auto;
+  border-radius:16px;
+  object-fit:cover;
+  box-shadow:0 6px 18px rgba(0,0,0,.08)
+}
+
+/* Tabla de información */
+table.info {
+  width:100%;
+  border-collapse:collapse
+}
+
+table.info th, 
+table.info td {
+  padding:10px 0;
+  border-bottom:1px solid #f3f3f3;
+  text-align:left
+}
+
+table.info th {
+  color:#555;
+  font-weight:600;
+  width:200px
+}
+
+.side {
+  display:grid;
+  gap:16px;
+  height:max-content
+}
+
+.cta .btn {
+  display:inline-block;
+  background:#f7be5a;
+  border:0;
+  border-radius:12px;
+  padding:12px 16px;
+  font-weight:800;
+  text-decoration:none;
+  color:#000
+}
+
+.cta .btn:focus,
+.cta .btn:hover {
+  filter:brightness(.98)
+}
+
+.back {
+  display:inline-block;
+  color:#444;
+  text-decoration:none;
+  border:1px solid #eee;
+  border-radius:10px;
+  padding:8px 12px
+}
+.list {
+  margin:0;
+  padding-left:18px
+}
+
+.list li {
+  margin:6px 0
+}
+
+.note {
+  font-size:12px;
+  color:#6b6b6b
+}
+
+/* Banner gris para solo en páginas de administración */
+body.admin-page .page-hero {
+  background: #f0f0f3;
+  border-bottom: 1px solid #ddd;
+}
+

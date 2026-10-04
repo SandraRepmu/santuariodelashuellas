@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | El Santuario de las Huellas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div style="background:#fff3cd;color:#664d03;text-align:center;padding:8px 12px;font-size:14px;border-bottom:1px solid #ffecb5;">Modo demo — sin servidor: datos de ejemplo en <code>data/animales.json</code>. Los cambios se guardan solo en tu navegador. Usuario demo: <b>admin / admin</b></div>
+	<script type="module" src="./login.js"></script>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="imagenes/logo.png" alt="El Santuario de las Huellas" />
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="animales.html">Nuestros peludos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+			<li id="optionAdmin"><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+      
+	   <a href="login.html" class="login-link" id="botonLogin">Login</a>
+	   <a href="#" class="login-link" id="botonLogout">Cerrar sesión</a>
+    </div>
+  </header>
+
+  <main class="login-page">
+    <form class="login-box" action="admin.html" method="post" id="form-login">
+      <h1>Acceso Administrador</h1>
+
+      <div class="field">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" required />
+      </div>
+
+      <div class="field">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" required />
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 · El Santuario de las Huellas</p>
+    </div>
+  </footer>
+</body>
+</html>

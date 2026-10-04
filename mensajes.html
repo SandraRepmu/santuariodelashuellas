@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mensajes | El Santuario de las Huellas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+<div style="background:#fff3cd;color:#664d03;text-align:center;padding:8px 12px;font-size:14px;border-bottom:1px solid #ffecb5;">Modo demo — sin servidor: datos de ejemplo en <code>data/animales.json</code>. Los cambios se guardan solo en tu navegador. Usuario demo: <b>admin / admin</b></div>
+<script type="module" src="./mensajes.js"></script>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="imagenes/logo.png" alt="El Santuario de las Huellas" />
+    </a>
+    <nav class="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="animales.html">Nuestros peludos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li id="optionAdmin"><a class="is-active" href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+	   <a href="#" class="login-link" id="botonLogout">Cerrar sesión</a>
+  </div>
+</header>
+
+
+  <section class="page-hero">
+  <div class="page-hero-container">
+    <h1>Mensajes (Administración)</h1>
+
+    <nav style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+      <a href="admin.html" class="btn btn--ghost">Animales</a>
+      <a href="mensajes.html" class="btn">Mensajes</a>
+    </nav>
+  </div>
+</section>
+
+  <main class="admin-wrap">
+    <section class="card" aria-labelledby="mensajes-title">
+      <header class="card__head"><h2 id="mensajes-title">Bandeja de mensajes</h2></header>
+      <div class="table-wrap">
+        <table class="table" id="tabla-mensajes">
+          <thead>
+            <tr>
+              <th>Nombre cliente</th>
+              <th>Nombre animal</th>
+              <th>Fecha</th>
+              <th>Contestado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Laura Gómez</td>
+              <td>Esteso</td>
+              <td>2025-11-10</td>
+              <td><span class="pill pill--no">No</span></td>
+              <td><a class="btn" href="mensaje.html">Ver mensaje</a></td>
+            </tr>
+            <tr>
+              <td>Carlos Ruiz</td>
+              <td>Mona</td>
+              <td>2025-11-08</td>
+              <td><span class="pill pill--yes">Sí</span></td>
+              <td><a class="btn" href="mensaje.html">Ver mensaje</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 · El Santuario de las Huellas</p>
+    </div>
+  </footer>
+</body>
+</html>

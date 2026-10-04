@@ -1,0 +1,41 @@
+[
+  {
+    "mensaje_id": 1,
+    "cliente_id": 1,
+    "nombre_apellidos": "Laura Gómez",
+    "email": "laura.gomez@ejemplo.com",
+    "telefono": "600111222",
+    "animal_nombre": "Luna",
+    "id_animal": 1,
+    "motivo": "Adoptar",
+    "fecha_envio": "2025-11-22 10:30:00",
+    "mensaje": "Hola, estoy interesada en adoptar a Luna. Vivo en un piso y me gustaría saber si convive con otros gatos. Gracias.",
+    "contestado": 0
+  },
+  {
+    "mensaje_id": 2,
+    "cliente_id": 2,
+    "nombre_apellidos": "Carlos Ruiz",
+    "email": "carlos.ruiz@ejemplo.com",
+    "telefono": "611333444",
+    "animal_nombre": "Bruno",
+    "id_animal": 2,
+    "motivo": "Adoptar",
+    "fecha_envio": "2025-11-20 18:15:00",
+    "mensaje": "Hola, nos ha enamorado Bruno. Tenemos casa con patio y dos niños. ¿Podríamos ir a conocerlo este finde?",
+    "contestado": 1
+  },
+  {
+    "mensaje_id": 3,
+    "cliente_id": 3,
+    "nombre_apellidos": "Marta Fernández",
+    "email": "marta.fer@ejemplo.com",
+    "telefono": "",
+    "animal_nombre": "Sin especificar",
+    "id_animal": null,
+    "motivo": "Dudas",
+    "fecha_envio": "2025-11-19 09:00:00",
+    "mensaje": "Hola, ¿qué requisitos pedís para adoptar? ¿Hay que pagar alguna tasa? Gracias.",
+    "contestado": 0
+  }
+]

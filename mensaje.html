@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalle del mensaje | El Santuario de las Huellas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+<div style="background:#fff3cd;color:#664d03;text-align:center;padding:8px 12px;font-size:14px;border-bottom:1px solid #ffecb5;">Modo demo — sin servidor: datos de ejemplo en <code>data/animales.json</code>. Los cambios se guardan solo en tu navegador. Usuario demo: <b>admin / admin</b></div>
+<script type="module" src="./mensaje.js"></script>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="imagenes/logo.png" alt="El Santuario de las Huellas" />
+    </a>
+    <nav class="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="animales.html">Nuestros peludos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li id="optionAdmin"><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+     <a href="login.html" class="login-link" id="botonLogin">Login</a>
+	 <a href="#" class="login-link" id="botonLogout">Cerrar sesión</a>
+  </div>
+</header>
+
+
+  <section class="page-hero">
+    <div class="page-hero-container">
+      <h1>Mensaje (Administración)</h1>
+    </div>
+  </section>
+
+  <main class="admin-wrap">
+    <section class="card">
+      <div class="toolbar">
+        <div class="left">
+          <a class="btn btn--ghost" href="mensajes.html">← Volver</a>
+        </div>
+        <div class="right">
+          <a id="botonContestado" class="btn" aria-disabled="true">Contestado</a>
+        </div>
+      </div>
+
+      <header class="card__head"><h2>Detalle del mensaje</h2></header>
+      <div class="card__body">
+        <div class="detail-meta">
+          <div class="detail-field">
+            <p class="label">Nombre del cliente</p>
+            <p class="value" id="nombre"></p>
+          </div>
+          <div class="detail-field">
+            <p class="label">Email del cliente</p>
+            <p class="value" id="email"></p>
+          </div>
+          <div class="detail-field">
+            <p class="label">Teléfono</p>
+            <p class="value" id="telefono"></p>
+          </div>
+          <div class="detail-field">
+            <p class="label">Nombre del animal</p>
+            <p class="value" id="nombreAnimal"></p>
+          </div>
+          <div class="detail-field">
+            <p class="label">Motivo del mensaje</p>
+            <p class="value" id="motivo"></p>
+          </div>
+          <div class="detail-field">
+            <p class="label">Fecha de envío</p>
+            <p class="value" id="fecha"></p>
+          </div>
+          <div class="detail-field detail-desc">
+            <p class="label">Descripción</p>
+            <p class="value"><pre id="mensaje"></pre></p>
+          </div>
+          <div class="detail-field">
+            <p class="label">Contestado</p>
+            <p class="value" id="contestado">No</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 · El Santuario de las Huellas</p>
+    </div>
+  </footer>
+</body>
+</html>

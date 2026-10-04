@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Administración | El Santuario de las Huellas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+<div style="background:#fff3cd;color:#664d03;text-align:center;padding:8px 12px;font-size:14px;border-bottom:1px solid #ffecb5;">Modo demo — sin servidor: datos de ejemplo en <code>data/animales.json</code>. Los cambios se guardan solo en tu navegador. Usuario demo: <b>admin / admin</b></div>
+
+	<script type="module" src="./admin.js"></script>
+
+ <header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="imagenes/logo.png" alt="El Santuario de las Huellas" />
+    </a>
+    <nav class="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="animales.html">Nuestros peludos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li id="optionAdmin"><a class="is-active" href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+	   <a href="#" class="login-link" id="botonLogout">Cerrar sesión</a>
+  </div>
+</header>
+
+ <section class="page-hero">
+  <div class="page-hero-container">
+    <h1>Animales (Administración)</h1>
+
+    <!-- Accesos rápidos -->
+    <nav style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+      <a href="admin.html" class="btn">Animales</a>
+      <a href="mensajes.html" class="btn btn--ghost">Mensajes</a>
+    </nav>
+  </div>
+</section>
+
+  <main class="admin-wrap">
+    <section class="card" aria-labelledby="listado-title">
+      <header class="card__head"><h2 id="listado-title">Listado</h2></header>
+      <div class="table-wrap">
+        <table class="table" id="tabla-animales">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Especie</th>
+              <th>Edad</th>
+              <th>Sexo</th>
+              <th>Tamaño</th>
+              <th>Raza</th>
+              <th>Vacunas</th>
+              <th>Esterilizado</th>
+              <th>Adoptado</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="nuevo-title">
+      <header class="card__head"><h2 id="titulo-animal">Nuevo animal</h2></header>
+      <form id="form-animal" class="form" action="#" method="post" autocomplete="on">
+        <input type="text" name="website" tabindex="-1" class="honeypot" aria-hidden="true">
+        <div class="form-row two">
+          <div class="field"><label for="nombre">Nombre*</label><input id="nombre" name="nombre" type="text" required></div>
+          <div class="field"><label for="especie">Especie</label><input id="especie" name="especie" type="text" placeholder="Perro / Gato / ..."></div>
+        </div>
+        <div class="form-row two">
+          <div class="field"><label for="edad">Edad</label><input id="edad" name="edad" type="number" min="0" step="1" placeholder="0"></div>
+          <div class="field"><label for="sexo">Sexo</label><input id="sexo" name="sexo" type="text" placeholder="Macho / Hembra / Desconocido"></div>
+        </div>
+        <div class="form-row two">
+          <div class="field"><label for="tamano">Tamaño</label><input id="tamano" name="tamano" type="text" placeholder="Pequeño / Mediano / Grande"></div>
+          <div class="field"><label for="raza">Raza</label><input id="raza" name="raza" type="text"></div>
+        </div>
+        <div class="form-row two">
+          <label class="check"><input type="checkbox" name="vacunas" id="checkVacuna"> Vacunas al día</label>
+          <label class="check"><input type="checkbox" name="esterilizado" id="checkEsterilizado"> Esterilizado</label>
+        </div>
+        <div class="form-row"><div class="field"><label for="descripcion">Descripción</label><textarea id="descripcion" name="descripcion" rows="4" placeholder="Carácter, sociabilidad, necesidades…"></textarea></div></div>
+        <div class="form-row"><div class="field"><label for="foto">URL de la foto</label><input name="foto" type="file" id="imageInput" accept="image/*" /></div></div>
+        <button type="submit" class="btn-submit">Guardar</button>
+        <p class="nota-requeridos">Los campos marcados con * son obligatorios.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 · El Santuario de las Huellas</p>
+    </div>
+  </footer>
+</body>
+</html>
